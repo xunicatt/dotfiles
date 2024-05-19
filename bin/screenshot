@@ -1,0 +1,17 @@
+set -x
+
+DATE_FMT=$(date +%F_%R)
+i=0
+OUTPUT_FILE="${HOME}/Pictures/Screenshots/${DATE_FMT}_${i}"
+echo $OUTPUT_FILE
+
+while [ -e $OUTPUT_FILE.jpg ]
+do
+    OUTPUT_FILE="${OUTPUT_FILE::-1}" 
+    ((i++))
+    OUTPUT_FILE+="${i}"  
+done
+
+flatpak run org.flameshot.Flameshot screen -p $OUTPUT_FILE.png
+convert -quality 100 $OUTPUT_FILE.png $OUTPUT_FILE.jpg
+rm -f $OUTPUT_FILE.png
