@@ -1,4 +1,5 @@
 # dotfiles
+Distro: Fedora
 WM: i3</br>
 Bar: Polybar</br>
 Terminal: Alacritty</br>
@@ -6,6 +7,7 @@ Text Editor: Vim</br>
 ScreenShot Tool: Flameshot</br>
 Clipboard Manager: Greenclip</br>
 Powermenu & Launcher: Rofi</br>
+System Information Tool: Neofetch</br>
 
 + Candymod:
 
