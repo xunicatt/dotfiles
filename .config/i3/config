@@ -26,6 +26,17 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+#special keybindings for function keys
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86Explorer exec --no-startup-id thunar
+bindsym XF86HomePage exec --no-startup-id firefox --new-window "https://www.google.com"
+bindsym XF86Calculator exec --no-startup-id flatpak run org.gnome.Calculator
+bindsym XF86Tools exec --no-startup-id flatpak run com.spotify.Client
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioStop exec --no-starup-id playerctl stop
+bindsym XF86Mail exec --no-startup-id firefox --new-window "https://mail.google.com"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -196,3 +207,5 @@ gaps outer 10
 #title bar
 default_border pixel 3
 default_floating_border pixel 3
+
+for_window [class="gnome-calculator"] floating enable
